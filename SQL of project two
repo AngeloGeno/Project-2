@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[USER]
+(
+	UserID  int NOT NULL PRIMARY KEY,
+	UserFName varchar(25) NOT NULL, 
+	UserLName varchar(25) NOT NULL
+	
+)
+
+CREATE TABLE [dbo].[METADATA]
+(
+	Photo_ID int NOT NULL PRIMARY KEY,
+	Tags varchar(50),
+	Geolocation varchar(50),
+	DateCaptured date NOT NULL,
+	UserID int FOREIGN KEY REFERENCES USER(UserID)
+
+)
